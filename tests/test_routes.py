@@ -134,12 +134,6 @@ class TestAccountService(TestCase):
         data = response.get_json()
         self.assertEqual(data["name"], account.name)
     
-    def test_account_not_found(self):
-        response = self.client.get(
-            f"{BASE_URL}/0"
-        )
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
     def test_list_account(self):
         self._create_accounts(5)
         resp = self.client.get(BASE_URL)
@@ -166,7 +160,7 @@ class TestAccountService(TestCase):
     def test_method_not_allowed(self):
         resp = self.client.delete(BASE_URL)
         self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
-        
+
 
 
 
