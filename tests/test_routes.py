@@ -129,7 +129,7 @@ class TestAccountService(TestCase):
         response = self.client.get(
             f"{BASE_URL}/{account.id}",
             content_type="application/json"
-        )
+)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         data = response.get_json()
         self.assertEqual(data["name"], account.name)
@@ -154,7 +154,7 @@ class TestAccountService(TestCase):
 
     def test_delete_account(self):
         account = self._create_accounts(1)[0]
-        resp = self.client.delete(f"{BASE_URL}/{account.id}" )
+        resp = self.client.delete(f"{BASE_URL}/{account.id}")
         self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_method_not_allowed(self):
