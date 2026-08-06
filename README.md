@@ -1,2 +1,2 @@
 # devops-capstone-project
-this is the DevOps capstone project wow
+![Build Status](https://github.com/FrustStorm/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
