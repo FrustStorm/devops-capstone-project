@@ -97,7 +97,7 @@ def read_account(account_id):
 def updated_account(account_id):
     account = Account.find(account_id)
     if not account:
-        abort(staus.HTTP_404_NOT_FOUND)
+        abort(status.HTTP_404_NOT_FOUND)
 
     account.deserialize(request.get_json())
     account.update()
